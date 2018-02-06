@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+<FrameLayout
+    android:id="@+id/titlebar_bg"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@color/colorPrimary">
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+
+    <ImageView
+        android:id="@+id/btn_back_main"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|center_vertical"
+        android:background="@color/colorPrimary"
+        android:clickable="true"
+        android:padding="13dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/btn_back_src"
+        />
+
+    <ImageView
+        android:id="@+id/btn_more_main"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right|center_vertical"
+        android:background="@color/colorPrimary"
+        android:clickable="true"
+        android:padding="9dp"
+        android:rotation="180270"
+        android:scaleType="centerInside"
+        android:src="@drawable/refresh" />
+
+
+</FrameLayout>
+
+</LinearLayout>
