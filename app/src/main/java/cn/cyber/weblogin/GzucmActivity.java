@@ -159,8 +159,8 @@ public class GzucmActivity extends AppCompatActivity {
 
                         ToastUtil.show("已跳转到认证页面,ip为：" + ip);
                         ipAdress.setText(ip);
-                        webview.loadUrl("javascript:setTimeout( function(){ try{ f3.DDDDD.value='" + username + "'}catch(e){}},200);");
-                        webview.loadUrl("javascript:setTimeout( function(){ try{ f3.upass.value ='" + passwordtext + "';f3.onsubmit();}catch(e){}},300);");
+                        webview.loadUrl("javascript:setTimeout( function(){ try{ f1.DDDDD.value='" + username + "'}catch(e){}},200);");
+                        webview.loadUrl("javascript:setTimeout( function(){ try{ f1.upass.value ='" + passwordtext + "';f1.onsubmit();}catch(e){}},300);");
 
                         setMyPreferences(ip, username, passwordtext);
                     } else {
