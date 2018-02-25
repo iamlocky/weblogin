@@ -28,6 +28,7 @@ import org.jsoup.select.Elements;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.cyber.weblogin.utils.ToastUtil;
 
 
 public class TelActivity extends AppCompatActivity {
@@ -231,6 +232,18 @@ public class TelActivity extends AppCompatActivity {
 
 
         }
+    }
+
+    @Override
+    protected void onResume() {
+        ToastUtil.isStop=false;
+        super.onResume();
+    }
+
+    @Override
+    protected void onStop() {
+        ToastUtil.isStop=true;
+        super.onStop();
     }
 
     @Override

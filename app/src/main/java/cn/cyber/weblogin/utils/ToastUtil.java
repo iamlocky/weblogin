@@ -10,8 +10,11 @@ import cn.cyber.weblogin.App;
 public class ToastUtil {
     private static Toast mToast;//控制toast时间
     private static Toast toast;
+    public static boolean isStop=false;
 
     public static void show(String text) {
+        if (isStop)
+            return;
         if (text==null)
             text="";
         if (mToast == null) {
@@ -24,11 +27,4 @@ public class ToastUtil {
         Log.i("Toast", text);
     }
 
-    public static void showShort(String txt){
-        Toast.makeText(App.getInstance(),txt, Toast.LENGTH_SHORT).show();
-    }
-
-    public static void showLong(String txt){
-        Toast.makeText(App.getInstance(),txt, Toast.LENGTH_LONG).show();
-    }
 }
