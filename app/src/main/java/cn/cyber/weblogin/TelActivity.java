@@ -133,7 +133,11 @@ public class TelActivity extends AppCompatActivity {
                     toast("无法获取ip，请手动输入");
                     return;
                 }
-                loadUrl(authurl + ip);
+                if (!webviewMain.getUrl().contains("219.136.125.139")) {
+                    loadUrl(authurl + ip);
+                }else {
+                    webviewMain.reload();
+                }
             }
             break;
         }
@@ -216,9 +220,9 @@ public class TelActivity extends AppCompatActivity {
                     ip = urls[urls.length - 1];
                     toast("已跳转到认证页面,ip为：" + ip);
                     ipAdress.setText(ip);
-                    webviewMain.loadUrl("javascript:setTimeout( function(){ try{ var t = document.getElementById('useridtemp');t.focus();t.select();t.value='" + username + "'}catch(e){}},300);");
+                    webviewMain.loadUrl("javascript:setTimeout( function(){ try{ var t = document.getElementById('useridtemp');t.focus();t.value='" + username + "'}catch(e){}},200);");
                     webviewMain.loadUrl("javascript:setTimeout( function(){ try{ var t2 = document.getElementById('passwd');t2.focus();t2.select();t2.value='" + passwordtext + "';t2.onsubmit();t2.submit();}catch(e){}},400);");
-                    webviewMain.loadUrl("javascript:setTimeout( function(){ control.sendEnter();},600);");
+                    webviewMain.loadUrl("javascript:setTimeout( function(){ document.getElementsByClassName('form_area')[0].submit();},500);");
                     setMyPreferences(ip, username, passwordtext);
                 } else {
                     if (a) {
