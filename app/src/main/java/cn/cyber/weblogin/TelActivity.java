@@ -22,9 +22,6 @@ import android.widget.Toast;
 
 import com.orhanobut.logger.Logger;
 
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -56,13 +53,13 @@ public class TelActivity extends AppCompatActivity {
     @BindView(R.id.titlebar_bg)
     FrameLayout titlebarBg;
 
-    String url = "http://cy-ber.cn/";
+    String url = "http://baidu.com/";
     String authurl = "http://219.136.125.139/portalReceiveAction.do?wlanacname=gzucm&wlanuserip=";
     String ip = "";
     String ua = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
     String uaTest = "http://ie.icoa.cn/";
     Boolean startFlag = false;
-
+    private static final String TAG = "TelActivity";
     String username = "";
     String passwordtext = "";
 

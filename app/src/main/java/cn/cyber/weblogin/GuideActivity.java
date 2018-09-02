@@ -43,7 +43,6 @@ public class GuideActivity extends AppCompatActivity {
     @OnClick(R.id.btn_back_main)
     public void onBtnBackMainClicked() {
         finish();
-        System.exit(0);
     }
 
 

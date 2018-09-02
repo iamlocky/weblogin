@@ -73,8 +73,9 @@ public class GzucmActivity extends AppCompatActivity {
     private Context context;
     private boolean isAutoRelogin = false;
     private CountDownTimer loginTimer;
+    private static final String TAG = "GzucmActivity";
     String ip = "";
-    String url = "http://cy-ber.cn/";
+    String url = "http://baidu.com/";
     String ua = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
     String uaTest = "http://ie.icoa.cn/";
     String username = "";
@@ -87,7 +88,7 @@ public class GzucmActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gzucm);
         ButterKnife.bind(this);
-        context = getApplicationContext();
+        context = this;
         initView();
     }
 
@@ -222,7 +223,7 @@ public class GzucmActivity extends AppCompatActivity {
 
             } catch (Exception e) {
                 e.printStackTrace();
-                Log.e(" ", e.getMessage());
+                Log.e(TAG, e.getMessage());
             }
 
 
@@ -289,7 +290,11 @@ public class GzucmActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_go)
     public void onBtnGoClicked() {
-        webview.loadUrl(edtUrl.getText().toString().trim());
+        url=edtUrl.getText().toString().trim();
+        if (!url.startsWith("http")){
+            url="http://"+url;
+        }
+        webview.loadUrl(url);
     }
 
 
